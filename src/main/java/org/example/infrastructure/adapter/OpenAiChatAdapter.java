@@ -32,7 +32,7 @@ public class OpenAiChatAdapter implements AiChatPort {
                 .map(msg -> new OpenAiChatRequest.OpenAiMessage(msg.role(), String.join("\n", msg.content())))
                 .collect(Collectors.toList());
 
-        OpenAiChatRequest request = new OpenAiChatRequest("gpt-3.5-turbo", openAiMessages);
+        OpenAiChatRequest request = new OpenAiChatRequest("gpt-4.1-nano", openAiMessages);
 
         OpenAiChatResponse response = openAiClient.createChatCompletion(
                 "Bearer " + apiKey,
